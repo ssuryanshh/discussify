@@ -1,114 +1,46 @@
-const express = require("express");
+// Server/index.js
+
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+// Initialize Express app
 const app = express();
-const port = 8000;
 
-app.use(express.json());
+// Parse incoming requests with JSON payloads
+app.use(bodyParser.json());
 
-let user = {
-    school: [
-        {
-            name:"Suryansh Srivastav",
-            email_id: "suryanshnextgen@gmail.com",
-            stream: "science",
-            class : 12,
-            user_name: "suryansh",
-            password : "suryansh",
-            credits : 100,
-        },
-    ],
-    college: [
-        {
-            name:"Suryansh Srivastav",
-            email_id: "suryanshnextgen@gmail.com",
-            graduation_course: "BTech",
-            specialization: "Computer Science and Engineering",
-            university: "LPU",
-            college_year: 3,
-            user_name: "suryansh",
-            password : "suryansh",
-            credits : 100,
-        },
-    ],
-    professional: [
-        {
-            name:"Suryansh Srivastav",
-            email_id: "suryanshnextgen@gmail.com",
-            highest_education: "Graduated",
-            profession: "Software Developer Intern",
-            university: "LPU",
-            user_name: "suryansh",
-            password : "suryansh",
-            credits : 100,
-        
-        },
-    ],
-}
-//GET- LIST all school users
-app.get("/user/school", (req,res)=>{
-    res.json(user.school);
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/edUnityDB', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
-
-//GET- LIST all college users
-app.get("/user/college", (req,res)=>{
-    res.json(user.college);
+// Check MongoDB connection
+mongoose.connection.on('connected', () => {
+  console.log('Connected to MongoDB');
 });
 
-//GET- LIST all professional users
-app.get("/user/professional", (req,res)=>{
-    res.json(user.professional);
+mongoose.connection.on('error', (err) => {
+  console.error(`MongoDB connection error: ${err}`);
 });
 
-//POST- Create a new user in school
-app.post("/user/school",(req, res)=>{
-    user.school.push(req.body);
-    res.send("User added");
+// Routes
+const authRoutes = require('./routes/authRoutes');
+const discussionRoutes = require('./routes/discussionRoutes');
+const mentorshipRoutes = require('./routes/mentorshipRoutes');
+const anxietyRoutes = require('./routes/anxietyRoutes');
+const doubtRoutes = require('./routes/doubtRoutes');
+
+// Use the routes
+app.use('/api/auth', authRoutes);
+app.use('/api/discussion', discussionRoutes);
+app.use('/api/mentorship', mentorshipRoutes);
+app.use('/api/anxiety', anxietyRoutes);
+app.use('/api/doubt', doubtRoutes);
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
-
-//POST- Create a new user in college
-app.post("/user/college",(req, res)=>{
-    user.college.push(req.body);
-    res.send("User added");
-});
-
-//POST- Create a new user in professional
-app.post("/user/professional",(req, res)=>{
-    user.professional.push(req.body);
-    res.send("User added");
-});
-
-
-// PUT - Modify passsword
-app.put("/school/password", (req, res) => {
-    const index = user.school.findIndex(
-      (u) => u.user_name === req.params.user_name
-    );
-    if (index === -1) {
-      res.status(404).send("user not found");
-    } else {
-      user.school[index] = { ...user.school[index], ...user.password };
-      res.send("Password updated");
-    }
-  });
-
-  // DELETE - Remove a user by username
-  app.delete("/user", (req, res) => {
-    const index = user.school.findIndex(
-      (u) => u.username === req.params.username
-    );
-    if (index === -1) {
-      res.status(404).send("User not found");
-    } else {
-      user.school.splice(index, 1);
-      res.send("user deleted");
-    }
-  });
-  
-  app.get("/*", (req, res) => {
-    res.send("You are on worng route. Here's the list of possible routes");
-  });
-  
-
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
-  });
