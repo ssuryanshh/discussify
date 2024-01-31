@@ -3,9 +3,8 @@ import React from 'react'
 function ClarityHub() {
   return (
     <div>
-      This is Clarity Page
+      Coming Soon...
     </div>
   )
 }
-
 export default ClarityHub

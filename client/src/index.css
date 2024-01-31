@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
 *{
-  background-color: #F8F8E5;
+  background-color: var(--color-beige);
+  margin: 1;
+}
+:root {
+  /* fonts */
+  --font-pangolin: "Pangolin";
+
+  /* font sizes */
+  --font-size-7xl: 26px;
+  --font-size-sm: 14px;
+  --font-size-15xl: 34px;
+
+  /* Colors */
+  --color-maroon: #800000;
+  --color-saddlebrown: #8b4513;
+  --color-lightpink: #ecacac;
+  --color-black: #000;
+  --color-beige: #F8F8E5;
+  --color-saffron: #FF9933;
+  --color-green: #228B22;
+
+  /* Gaps */
+  --gap-smi: 13px;
+
+  /* Paddings */
+  --padding-6xs: 7px;
+  --padding-4xs: 9px;
 }
