@@ -2,19 +2,15 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 
 // Initialize Express app
 const app = express();
 
 // Parse incoming requests with JSON payloads
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/edUnityDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect('mongodb+srv://ssuryansshh:edUnity.Grow@edunity.e7tuhup.mongodb.net/?retryWrites=true&w=majority');
 
 // Check MongoDB connection
 mongoose.connection.on('connected', () => {
@@ -26,10 +22,10 @@ mongoose.connection.on('error', (err) => {
 });
 
 // Routes
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/userRoutes');
 const discussionRoutes = require('./routes/discussionRoutes');
 const mentorshipRoutes = require('./routes/mentorshipRoutes');
-const anxietyRoutes = require('./routes/anxietyRoutes');
+const anxietyRoutes = require('./routes/anxietysessionRoutes');
 const doubtRoutes = require('./routes/doubtRoutes');
 
 // Use the routes
