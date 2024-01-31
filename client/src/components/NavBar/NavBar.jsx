@@ -1,5 +1,6 @@
 import {NavLink} from "react-router-dom";
 import "../NavBar/NavBar.css";
+import logo from "../NavBar/brand.png"
 import React from 'react';
 
 function NavBar() {
@@ -7,32 +8,29 @@ function NavBar() {
     <header>
         <div className="container">
             <div className="logo-brand">
-                <NavLink to = "/">edUnity</NavLink>
-            </div>
+                <NavLink><img src={logo} alt="logo" className="logo"></img></NavLink>
+                </div>
             <nav>
-                <ul>
+                <ul className="nav-links-container">
                     <li>
-                        <NavLink to="/">Home</NavLink>
+                        <NavLink to="/" activeClassName="active" className="nav-link">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/Services">Services</NavLink>
+                        <NavLink to="/services" activeClassName="active" className="nav-link">Services</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/About">About</NavLink>
+                        <NavLink to="/about" activeClassName="active" className="nav-link">About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/Contact">Contact</NavLink>
-                    </li>
+                        <NavLink to="/contact" activeClassName="active" className="nav-link">Contact</NavLink>
+                    </li>   
                     <li>
-                        <NavLink to="/Login">Login</NavLink>
+                            <NavLink to="/login" activeClassName="active" className="user" >Login/Register</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/Register">Register</NavLink>
-                    </li>
-                
                 </ul>
             </nav>
         </div>
+        <hr className="line"/>
     </header>
   )
 }

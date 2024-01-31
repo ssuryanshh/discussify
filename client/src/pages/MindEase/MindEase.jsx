@@ -3,7 +3,7 @@ import React from 'react'
 function MindEase() {
   return (
     <div>
-    This is MindEase Page
+    Coming Soon...
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Feedback from "./pages/Feedback/Feedback";
@@ -25,20 +24,20 @@ function App() {
     <NavBar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact/*" element={<Contact />} />
-        <Route path="/Feedback"  element={<Feedback />} />
-        <Route path="/Login" element={<Login/>}/>
-        <Route path="/Services" element={<Services/>}/>
-        <Route path="/Register" element={<Register/>}/>
-        <Route path="/Profile" element={<Profile/>}/>
-        <Route path="/ClarityHub" element={<ClarityHub/>}/>
-        <Route path="/CollabLearn" element={<CollabLearn/>}/>
-        <Route path="/JoyJunction" element={<JoyJunction/>}/>
-        <Route path="/LearnLab" element={<LearnLab/>}/>
-        <Route path="/MentorMagic" element={<MentorMagic/>}/>
-        <Route path="/MindEase" element={<MindEase/>}/>
-        <Route path="/TalkSphere" element={<TalkSphere/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/contact/*" element={<Contact />} />
+        <Route path="/feedback"  element={<Feedback />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/services" element={<Services/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/clarity_hub" element={<ClarityHub/>}/>
+        <Route path="/collab_learn" element={<CollabLearn/>}/>
+        <Route path="/joy_junction" element={<JoyJunction/>}/>
+        <Route path="/learn_lab" element={<LearnLab/>}/>
+        <Route path="/mentor_magic" element={<MentorMagic/>}/>
+        <Route path="/mind_ease" element={<MindEase/>}/>
+        <Route path="/talk_sphere" element={<TalkSphere/>}/>
       </Routes>
       <Footer/> 
     </BrowserRouter>

@@ -3,7 +3,7 @@ import React from 'react'
 function CollabLearn() {
   return (
     <div>
-      This is CollabLearn Page
+      Coming Soon...
     </div>
   )
 }
