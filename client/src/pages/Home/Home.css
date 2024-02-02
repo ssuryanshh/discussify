@@ -14,9 +14,16 @@
     font-size :xx-large;
     color: var(--color-maroon);
     font-weight:bold;
-    margin-bottom:1;
     letter-spacing: 5px;
     font-family: 'Yatra One', system-ui;
+}
+.service-head{
+  font-size :80px;
+  color: var(--color-saddlebrown);
+  font-weight:bold;
+  margin-bottom:1;
+  letter-spacing: 5px;
+  font-family: 'Yatra One', system-ui;
 }
 .main-content{
     text-align: left;
@@ -189,7 +196,7 @@
   .content{
     word-wrap:initial;
   }
-  .pages {
+  .card-btn {
     color: #090909;
     padding: 0.7em 1.7em;
     font-size: 18px;
@@ -201,8 +208,11 @@
     box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
   }
   
-  .pages:active {
+  .card-btn:active {
     color: #666;
     box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
   }
-  
+  .type-text{
+    max-width: 60%;
+    font-size: large;
+  }

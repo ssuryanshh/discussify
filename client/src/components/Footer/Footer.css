@@ -1,5 +1,6 @@
 footer{
     bottom: 0;
+    width: 100%;
 }
 .footer-container{
     margin: 0 auto;
@@ -11,17 +12,20 @@ footer{
     width: 98.4%;
     display: flex;
     justify-content: center;
+    bottom: 0;
 
 }
 .footer-data{
     display: flex;
     justify-content: center;
+    bottom: 0;
 }
 .content{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    bottom: 0;
 }
 li{
     list-style: none;

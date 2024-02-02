@@ -8,7 +8,7 @@ function NavBar() {
     <header>
         <div className="container">
             <div>
-                <NavLink><img src={logo} alt="logo" className="brand"></img></NavLink>
+                <NavLink to="/"><img src={logo} alt="logo" className="brand"></img></NavLink>
                 </div>
             <nav>
                 <ul className="nav-links-container">

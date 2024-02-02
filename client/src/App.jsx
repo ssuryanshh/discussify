@@ -17,7 +17,6 @@ import MindEase from "./pages/MindEase/MindEase";
 import TalkSphere from "./pages/TalkSphere/TalkSphere";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
-
 function App() {
   return (
     <BrowserRouter>
