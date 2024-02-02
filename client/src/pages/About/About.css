@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 .about-container{
   display: flex;
   justify-content: center;
@@ -8,13 +10,19 @@ div.about{
   width: 60%;
 }
 p.about{
+  font-family: 'Lora', serif;
   font-size: large;
 }
 .ul-about{
   font-size: large;
   list-style: circle;
+  font-family: 'Lora', serif;
 }
 .ol-about{
   font-size: large;
   list-style: decimal;
+  font-family: 'Lora', serif;
+}
+h1.about,h2.about,h3.about{
+  font-family: 'PT Mono', monospace;
 }

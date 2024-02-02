@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Login.css"
-function Login() {
+function Login({setShowDashboard}) {
   return (
     <div  className="login">
     <div class="wrapper">
@@ -15,7 +15,7 @@ function Login() {
                  <form class="flip-card__form" action="">
                     <input class="flip-card__input" name="email" placeholder="Email" type="email"></input>
                     <input class="flip-card__input" name="password" placeholder="Password" type="password"></input>
-                    <button class="flip-card__btn">Let`s go!</button>
+                    <button class="flip-card__btn" >Let`s go!</button>
                  </form>
               </div>
               <div class="flip-card__back">

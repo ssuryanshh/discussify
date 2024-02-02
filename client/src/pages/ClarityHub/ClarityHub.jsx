@@ -1,9 +1,9 @@
-import React from 'react'
-
+import "./ClarityHub.css"
+import React from 'react';
 function ClarityHub() {
   return (
     <div>
-      Coming Soon...
+      coming Soon
     </div>
   )
 }
