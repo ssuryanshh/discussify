@@ -1,17 +1,18 @@
 import {NavLink} from "react-router-dom";
-import "../NavBar/NavBar.css";
-import logo from "../NavBar/brand.png"
+import "./NavBar.css";
 import React from 'react';
+import logo from "./brand.png"
 
 function NavBar() {
   return (
     <header>
-        <div className="container">
-            <div>
-                <NavLink to="/"><img src={logo} alt="logo" className="brand"></img></NavLink>
-                </div>
+        <div  className="navbar">
+            <div className="logo">
+                <img src={logo} className="brand"></img>
+            </div>
+            <div></div>
             <nav>
-                <ul className="nav-links-container">
+            <ul className="nav-links-container">
                     <li className="links">
                         <NavLink to="/" activeClassName="active" className="nav-link">Home</NavLink>
                     </li >
@@ -25,12 +26,11 @@ function NavBar() {
                         <NavLink to="/contact" activeClassName="active" className="nav-link">Contact</NavLink>
                     </li>   
                     <li className="links">
-                            <NavLink to="/login" activeClassName="active" className="user" >Login/Register</NavLink>
+                            <NavLink to="/login" ><button className = "ed-register" type="button">Login / Register</button></NavLink>
                     </li>
                 </ul>
             </nav>
         </div>
-        <hr className="line"/>
     </header>
   )
 }
