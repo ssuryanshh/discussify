@@ -1,96 +1,116 @@
-
-header{
+.navbar{
     background-color: var(--color-beige);
-    padding-top: 8px;
-}
-.container{
-    max-width: 100%;
-    display: flex   ;
+    height: 6rem;
+    width: 99.6%;
+    display: grid;
+    grid-template-columns: 20% 35% 45%;
+    align-items: center;
     justify-content: space-between;
-    margin-right: 2.5%;
 }
-.links{
-    list-style: none;
-    padding-left: 10%;
-    padding-right: 10%;
-    margin: 0;
+.logo{
+    height: 80%;
+}
+.brand{
     height: 100%;
-    text-align: center;
-    align-items: center;
-    border-right: 2px solid var(--color-lightpink);
-    
+    padding-left: 10px;
+
 }
-.line{
-    border-color: var(--color-lightpink);
-}
-nav{
-    display: flex;
-    margin-right: 16%;
+.nav-links-container{
+    width: 93%;
     align-items: center;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    justify-content: space-between;
 }
 .nav-link{
-    color: var(--color-saddlebrown);
     text-decoration: none;
+    color: var(--color-saddlebrown);
+    font-size: 22px;
+    padding: 1rem 2rem;
     position: relative;
-    display:flex;
-    transition: 1s ease;
-    text-align: center;
-    align-items: center;
-    top: 40%;
-    font-family: var(--font-pangolin);
-    font-size: larger;
 }
-.nav-link:before{
+.nav-link::before,
+.nav-link::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-green);
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+}
+.nav-link::before{
+    top:0;
+    left: 0;
+    transform-origin: left;
+}
+.nav-link::after{
+    bottom: 0;
+    left: 0;
+    transform-origin:right ;
+}
+.nav-link:hover::before,.nav-link:hover::after{
+    transform: scaleX(1);
+}
+button.ed-register {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid var(--color-green);
+    border-radius: 4px;
+    background-color: var(--color-beige);
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--color-green);
+    z-index: 1;
+  }
+  
+  button.ed-register:before {
     content: "";
     position: absolute;
     left: 50%;
-    width: 0;
-    height: 2px;
-    bottom: -1px;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
     background-color: var(--color-green);
-    transition: 1s ease;
-    opacity: 0;
-}
-.nav-link:hover:before{        
-    width: 100%;
-    left: 0;
-    opacity: 1;
-}
-.active{
-    color: var(--color-saddlebrown);
-}
-
-.nav-links-container{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-.brand{
-    border-right    : 2px solid var(--color-lightpink);
-    padding-right: 25%;
-    padding-left: 15px;
-
-}
-.user{
-    color: var(--color-maroon);
-    text-decoration: none;
-    position: relative;
-    display:flex;
-    transition: 1s ease;
-    text-align: center;
-    align-items: center;
-    top: 40%;
-    font-family: var(--font-pangolin);
-    transition: 1s ease;
-    font-size: larger;
-}
-
-.user:hover{        
-    width: 100%;
-    left: 0;
-    opacity: 1;
-    border: solid 1px var(--color-lightpink);
-    color: var(--color-green);
-    transition: 1s ease;
-    transform-origin: center;    
-}
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  button.ed-register:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  button.ed-register:hover {
+    color: var(--color-beige);
+    border: 1px solid var(--color-green);
+  }
+  
+  button.ed-register:hover:before {
+    top: -35%;
+    background-color: var(--color-green);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
+  button.ed-register:hover:after {
+    top: -45%;
+    background-color: var(--color-green);
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+  }
+  
