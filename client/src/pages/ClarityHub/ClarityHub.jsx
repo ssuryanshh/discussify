@@ -1,10 +1,9 @@
-import "./ClarityHub.css"
 import React from 'react';
 function ClarityHub() {
   return (
-    <div>
-      coming Soon
-    </div>
+<div>
+  coming soon
+</div>
   )
 }
 export default ClarityHub
