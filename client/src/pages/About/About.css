@@ -9,20 +9,11 @@
 div.about{
   width: 60%;
 }
-p.about{
+p.about,.ul-about,.ol-about{
   font-family: 'Lora', serif;
   font-size: large;
 }
-.ul-about{
-  font-size: large;
-  list-style: circle;
-  font-family: 'Lora', serif;
-}
-.ol-about{
-  font-size: large;
-  list-style: decimal;
-  font-family: 'Lora', serif;
-}
+
 h1.about,h2.about,h3.about{
   font-family: 'PT Mono', monospace;
 }

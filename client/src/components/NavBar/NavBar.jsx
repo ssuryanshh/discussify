@@ -14,19 +14,19 @@ function NavBar() {
             <nav>
             <ul className="nav-links-container">
                     <li className="links">
-                        <NavLink to="/" activeClassName="active" className="nav-link">Home</NavLink>
+                        <NavLink to="/" activeClassName="active" className="nav-link">HOME</NavLink>
                     </li >
                     <li className="links">
-                        <NavLink to="/services" activeClassName="active" className="nav-link">Services</NavLink>
+                        <NavLink to="/services" activeClassName="active" className="nav-link">SERVICES</NavLink>
                     </li>
                     <li className="links">
-                        <NavLink to="/about" activeClassName="active" className="nav-link">About</NavLink>
+                        <NavLink to="/about" activeClassName="active" className="nav-link">ABOUT</NavLink>
                     </li>
                     <li className="links">
-                        <NavLink to="/contact" activeClassName="active" className="nav-link">Contact</NavLink>
+                        <NavLink to="/contact" activeClassName="active" className="nav-link">CONTACT</NavLink>
                     </li>   
                     <li className="links">
-                            <NavLink to="/login" ><button className = "ed-register" type="button">Login / Register</button></NavLink>
+                            <NavLink to="/login" ><button className = "ed-register" type="button">LOGIN / REGISTER</button></NavLink>
                     </li>
                 </ul>
             </nav>
