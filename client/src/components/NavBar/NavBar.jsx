@@ -7,24 +7,24 @@ function NavBar() {
   return (
     <header>
         <div className="container">
-            <div className="logo-brand">
-                <NavLink><img src={logo} alt="logo" className="logo"></img></NavLink>
+            <div>
+                <NavLink><img src={logo} alt="logo" className="brand"></img></NavLink>
                 </div>
             <nav>
                 <ul className="nav-links-container">
-                    <li>
+                    <li className="links">
                         <NavLink to="/" activeClassName="active" className="nav-link">Home</NavLink>
-                    </li>
-                    <li>
+                    </li >
+                    <li className="links">
                         <NavLink to="/services" activeClassName="active" className="nav-link">Services</NavLink>
                     </li>
-                    <li>
+                    <li className="links">
                         <NavLink to="/about" activeClassName="active" className="nav-link">About</NavLink>
                     </li>
-                    <li>
+                    <li className="links">
                         <NavLink to="/contact" activeClassName="active" className="nav-link">Contact</NavLink>
                     </li>   
-                    <li>
+                    <li className="links">
                             <NavLink to="/login" activeClassName="active" className="user" >Login/Register</NavLink>
                     </li>
                 </ul>

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
-*{
-  background-color: var(--color-beige);
-  margin: 1;
-}
+
 :root {
   /* fonts */
   --font-pangolin: "Pangolin";

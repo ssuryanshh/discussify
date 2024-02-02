@@ -1,0 +1,25 @@
+.service-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.service{
+    width: 80%;
+}
+img.service{
+    height: 300px;
+    width: 300px;
+}
+.serice-content-container{
+    display: flex;
+    justify-content:space-between;
+}
+.service-content{
+    width:50%;
+    font-size: large;
+}
+.service-content-type{
+    background-color: rgb(253, 248, 241);
+    row-gap: 40px;
+    padding-left: 20px;
+}

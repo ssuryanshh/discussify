@@ -1,0 +1,20 @@
+.about-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 79vh;
+}
+div.about{
+  width: 60%;
+}
+p.about{
+  font-size: large;
+}
+.ul-about{
+  font-size: large;
+  list-style: circle;
+}
+.ol-about{
+  font-size: large;
+  list-style: decimal;
+}
