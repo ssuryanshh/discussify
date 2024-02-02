@@ -1,16 +1,15 @@
+
+header{
+    background-color: var(--color-beige);
+    padding-top: 8px;
+}
 .container{
     max-width: 100%;
     display: flex   ;
     justify-content: space-between;
-    margin-right: 2.5%;}
-    
-ul{
-    align-items: center;
-    text-align: center;
-    margin: 0 0;
-    
+    margin-right: 2.5%;
 }
-li{
+.links{
     list-style: none;
     padding-left: 10%;
     padding-right: 10%;
@@ -66,9 +65,11 @@ nav{
     align-items: center;
     height: 100%;
 }
-.logo{
+.brand{
     border-right    : 2px solid var(--color-lightpink);
     padding-right: 25%;
+    padding-left: 15px;
+
 }
 .user{
     color: var(--color-maroon);

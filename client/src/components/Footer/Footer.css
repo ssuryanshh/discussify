@@ -1,0 +1,29 @@
+footer{
+    bottom: 0;
+}
+.footer-container{
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: burlywood;
+    width: 98.4%;
+    display: flex;
+    justify-content: center;
+
+}
+.footer-data{
+    display: flex;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+}
+
