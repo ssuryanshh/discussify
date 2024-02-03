@@ -38,6 +38,7 @@ function App() {
         <Route path="/mind_ease" element={<MindEase/>}/>
         <Route path="/talk_sphere" element={<TalkSphere/>}/>
       </Routes>
+      <div></div>
       <Footer/> 
     </BrowserRouter>
   )}

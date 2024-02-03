@@ -1,19 +1,27 @@
-// models/discussion.js
+const mongoose = require("mongoose");
 
-const mongoose = require('mongoose');
-
-const discussionSchema = new mongoose.Schema({
-  isGlobal: { type: Boolean, default: false }, // Added isGlobal flag
-  category: { type: String, enum: ['school', 'college', 'professional'], required: true },
+const TalkSphereSchema = new mongoose.Schema({
+  channel: {
+    type: String,
+    enum: ["global", "school", "college", "professional"],
+    required: true,
+  },
   messages: [
     {
-      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-      content: { type: String, required: true },
-      createdAt: { type: Date, default: Date.now },
+      username: {
+        type: String,
+        required: true,
+      },
+      text: {
+        type: String,
+        required: true,
+      },
+      timestamp: {
+        type: Date,
+        default: Date.now,
+      },
     },
   ],
 });
 
-const Discussion = mongoose.model('Discussion', discussionSchema);
-
-module.exports = Discussion;
+module.exports = mongoose.model("TalkSphere", TalkSphereSchema);

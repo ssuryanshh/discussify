@@ -24,8 +24,9 @@ function Home() {
         </div></centre>
       </div>
       </section>
-      <div className="service-container">
-      <div className="service">
+      <section>
+      <div className="home-service-container">
+      <div className="service-home">
         <div>
           <center><h1 className="type">SERVICES</h1></center>
         </div>
@@ -120,10 +121,10 @@ function Home() {
           </div>
           <div></div>
         </div>
-        <div></div>
         </div>
       </div>
     </div>
+    </section>
     </>
   )
 }
