@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Login.css"
-function Login({setShowDashboard}) {
+import {NavLink} from "react-router-dom";
+function Login() {
   return (
     <div  className="login">
     <div class="wrapper">
@@ -24,7 +25,7 @@ function Login({setShowDashboard}) {
                     <input class="flip-card__input" placeholder="userame" type="username"></input>
                     <input class="flip-card__input" name="email" placeholder="Email" type="email"></input>
                     <input class="flip-card__input" name="password" placeholder="Password" type="password"></input>
-                    <button class="flip-card__btn">Confirm!</button>
+                    <NavLink to ="/register"><button class="flip-card__btn">Confirm!</button></NavLink>
                  </form>
               </div>
            </div>

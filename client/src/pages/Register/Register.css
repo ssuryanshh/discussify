@@ -1,0 +1,99 @@
+.register-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 30%;
+}
+.cat-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60%;
+    width :60%;
+    flex-direction: column;
+    background: lightgrey;
+    gap: 20px;
+    border: 2px solid rgb(34, 34, 34) ;
+    border-radius: 5px;   
+    box-shadow: 4px 4px rgb(37, 37, 37) ;
+    
+}
+.cat-sel{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    font-size: x-large;
+    gap: 6px;
+}
+
+h1.cat{
+    font-size: xx-large;
+    margin-top: 2px;
+}  
+.cat-btn{
+        margin: 20px 0 20px 0;
+        width: 120px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid rgb(37, 37, 37);
+        background-color: rgb(231, 231, 231);
+        box-shadow: 4px 4px rgb(37, 37, 37);
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--font-color);
+        cursor: pointer;
+    }
+    .cat-details{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90%;
+        width :75%;
+        flex-direction: column;
+        background: lightgrey;
+        gap: 20px;
+        border: 2px solid rgb(34, 34, 34) ;
+        border-radius: 5px;   
+        box-shadow: 4px 4px rgb(37, 37, 37) ;
+    }
+    .btn-details{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 20px;
+        justify-content: space-between;
+    }
+    .cat-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .cat-input{
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        border: 2px solid rgb(34, 34, 34);
+        background-color: rgb(232, 232, 232);
+        box-shadow: 4px 4px rgb(34, 34, 34);
+        font-size: 15px;
+        font-weight: 600;
+        color: #323232;
+        padding: 5px 10px;
+        outline: none;
+    }
+    .cat-input::placeholder{
+        color: #666;
+        opacity: 0.8;
+    }
+    .cat-input:focus{
+        border: 2px solid #2d8cf0;
+    }
