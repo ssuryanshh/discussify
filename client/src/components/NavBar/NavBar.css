@@ -7,6 +7,7 @@
     grid-template-columns: 20% 35% 45%;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 1px 1px 8px rgb(201, 201, 201);
 }
 .logo{
     height: 80%;
