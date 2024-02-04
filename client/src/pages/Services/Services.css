@@ -38,7 +38,7 @@ h1.service{
 p.service{
     font-family: 'Lora', serif;
 }
-button {
+button.service-btn {
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
@@ -54,7 +54,7 @@ button {
     overflow: hidden;
    }
    
-   button::before {
+   button.service-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -69,10 +69,10 @@ button {
     transition: all 250ms
    }
    
-   button:hover {
+   button.service-btn:hover {
     color: #e8e8e8;
    }
    
-   button:hover::before {
+   button.service-btn:hover::before {
     width: 100%;
    }
