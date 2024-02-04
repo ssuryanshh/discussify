@@ -17,7 +17,7 @@ function Services() {
             <div className='service-content'>
               <p>EdUnity's Discussion Forum is the heart of collaborative learning. Here, students from different regions come together to share their knowledge, ask questions, and engage in discussions. Users can express themselves through various mediums, including text, stickers, emojis, and even voice messages. The platform fosters a sense of community, connecting minds across geographical boundaries and promoting a vibrant exchange of ideas.
 </p>
-              <NavLink to="/clarity_hub"><button type='button'>Get Started</button></NavLink>
+              <NavLink to="/clarity_hub"><button className= "service-btn" type='button'>Get Started</button></NavLink>
             </div>
             <div><img src={doubt} className='service'></img></div>
           </div>
