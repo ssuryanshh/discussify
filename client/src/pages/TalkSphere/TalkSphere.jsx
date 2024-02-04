@@ -1,48 +1,35 @@
-import React, { useState, useEffect } from 'react';
-
-const TalkSphere = () => {
-  const [messages, setMessages] = useState([]);
-  const [newMessage, setNewMessage] = useState('');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMessages(prevMessages => [...prevMessages, { username: 'User', text: 'Hello!' }]);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleSendMessage = () => {
-    if (newMessage.trim()) {
-      setMessages(prevMessages => [...prevMessages, { username: 'User', text: newMessage }]);
-      setNewMessage('');
-    }
-  };
-
+import React, { useState}from 'react'
+import "./TalkSphere.css"
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
+function TalkSphere() {
+  const [selectedOption, setSelectedOption] = useState('Global Chat')
   return (
-    <div>
-      <h1>TalkSphere</h1>
-      <div>
-        <select>
-          <option value="global">Global</option>
-          <option value="school">School</option>
-          <option value="college">College</option>
-          <option value="professional">Professional</option>
+    <div className='talksphere-container'>
+      <div className='talk-head'>
+      <select className='talksphere' value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
+          <option value="Global Chat">Global Chat</option>
+          <option value="Category Chat">Category Chat</option>
         </select>
+        <h1>TalkSphere</h1>
+        <div className='talk-online'>
+          <AvatarGroup total={10}>
+            <Avatar>A</Avatar>
+            <Avatar>S</Avatar>
+            <Avatar>R</Avatar>
+            <Avatar>M</Avatar>
+          </AvatarGroup>
+        </div>
       </div>
-      <div>
-        {messages.map((message, index) => (
-          <div key={index}>
-            <strong>{message.username}:</strong> {message.text}
-          </div>
-        ))}
-      </div>
-      <div>
-        <input value={newMessage} onChange={e => setNewMessage(e.target.value)} />
-        <button onClick={handleSendMessage}>Send</button>
+      <div className='chatbox'>
+        
+      </div>  
+      <div className='send'>
+        <textarea className='message' placeholder='Type a message'></textarea>
+        <button className='talk' type='submit'>Send</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TalkSphere;
+export default TalkSphere

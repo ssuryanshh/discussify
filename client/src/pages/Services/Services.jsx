@@ -28,7 +28,7 @@ function Services() {
             <div className='service-content'>
               <p>EdUnity's Discussion Forum is the heart of collaborative learning. Here, students from different regions come together to share their knowledge, ask questions, and engage in discussions. Users can express themselves through various mediums, including text, stickers, emojis, and even voice messages. The platform fosters a sense of community, connecting minds across geographical boundaries and promoting a vibrant exchange of ideas.
 </p>
-<NavLink to="/mentor-magic"><button type='button'>Get Started</button></NavLink>
+<NavLink to="/mentor_magic"><button type='button'>Get Started</button></NavLink>
             </div>
             <div><img src={mentor} className='service'></img></div>
           </div>
@@ -39,7 +39,7 @@ function Services() {
             <div className='service-content'>
               <p>Recognizing the importance of mental well-being, edUnity introduces the Anxiety Helpdesk. Users facing anxiety or other challenges can connect with expert users anonymously. Whether through confidential chat sessions or virtual meetings, the platform provides a safe space for seeking support and coping with stress. This service aims to foster a sense of community and understanding around mental health.
 </p>
-<NavLink to="/mind-ease"><button type='button'>Get Started</button></NavLink>
+<NavLink to="/mind_ease"><button type='button'>Get Started</button></NavLink>
             </div>
             <div><img src={anxiety} className='service'></img></div>
           </div>
@@ -50,7 +50,7 @@ function Services() {
             <div className='service-content'>
               <p>EdUnity's Discussion Forum is the heart of collaborative learning. Here, students from different regions come together to share their knowledge, ask questions, and engage in discussions. Users can express themselves through various mediums, including text, stickers, emojis, and even voice messages. The platform fosters a sense of community, connecting minds across geographical boundaries and promoting a vibrant exchange of ideas.
 </p>
-<NavLink to="/talk-sphere"><button type='button'>Get Started</button></NavLink>
+<NavLink to="/talk_sphere"><button type='button'>Get Started</button></NavLink>
             </div>
             <div><img src={discussion} className='service'></img></div>
           </div>
