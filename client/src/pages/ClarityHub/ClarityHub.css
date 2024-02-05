@@ -2,24 +2,24 @@
     min-height: 100vh; 
     background-color: #F3F4F6; 
     margin: 10px;
-    border: 1px solid #b3b2b2;
+    border: 1px solid #908f8f;
     border-radius: 5px;
 
 }
 .clarity-head{
     display: flex; 
-padding: 0.1rem; 
 justify-content: space-between; 
 align-items: center; 
 border-bottom-width: 1px; 
 border: 1px solid #c9c9c9;
+padding: 20px;
 }
 h1.clarity{
     margin-left:3% ;
     font-weight: 500;
 }
 .clarity-search{
-    width: 450px;
+    width: 550px;
     height:  28px;
 }
 input.clarity{

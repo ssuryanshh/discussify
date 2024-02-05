@@ -1,0 +1,93 @@
+.learnlab-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 10px;
+  background-color: rgb(245, 245, 246);
+}
+.learnlab-head {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  height: 3.5rem;
+  text-align: center;
+  padding-top: 1%;
+  background-color: #f2f2f3;
+  border: 1px solid #b1b1b2;
+}
+.learnlab-main {
+  flex: 1 1 0%;
+}
+.learn-main-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+.learn-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.learn-head {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+p.subtitle {
+  color: #6b7280;
+  max-width: 600px;
+}
+.lab-resource-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.lab-container {
+  display: grid;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  gap: 5rem;
+  align-items: center;
+  max-width: 100%;
+right: 10%;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
+  
+}
+.resource-container {
+  margin-top: 1rem;
+  padding: 2rem;
+  border: 0.03rem solid #cfcfd2 ;
+  border-radius: 0.1rem;
+  width: 100%;
+  display: grid;
+}
+.material-container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+
+}
+h4.learnlab {
+  font-size: 1.3rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+p.resource-text {
+  color: #6b7280;
+  max-width: 600px;
+}
+.learn-links{
+    align-items: center;
+    text-align: center;
+}
+ul.learn
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

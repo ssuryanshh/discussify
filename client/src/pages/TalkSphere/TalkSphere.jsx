@@ -10,6 +10,8 @@ function TalkSphere() {
       <select className='talksphere' value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}>
           <option value="Global Chat">Global Chat</option>
           <option value="Category Chat">Category Chat</option>
+          <option value="Mentor Chat">Mentor Chat</option>
+          <option value="Mentee Chat">Mentee Chat</option>
         </select>
         <h1>TalkSphere</h1>
         <div className='talk-online'>
