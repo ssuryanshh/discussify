@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 const TalkSphereSchema = new mongoose.Schema({
-  channel: {
-    type: String,
-    enum: ["global", "school", "college", "professional"],
-    required: true,
-  },
   messages: [
     {
       username: {
@@ -24,4 +19,7 @@ const TalkSphereSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("TalkSphere", TalkSphereSchema);
+
+const TalkSphere = new mongoose.model('TalkSphere', TalkSphereSchema);
+
+module.exports = TalkSphere;

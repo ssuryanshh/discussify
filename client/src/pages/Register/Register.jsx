@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./Register.css";
-// Make sure to include the style for the toggle
+import axios from 'axios';
 
 class RegistrationForm extends Component {
   constructor(props) {
@@ -8,7 +8,20 @@ class RegistrationForm extends Component {
     this.state = {
       step: 1,
       category: null,
-      toggle: false
+      toggle: false,
+      userDetails: {
+        username:'',
+        email:'',
+        password:'',
+        name:'',
+        graduationCourse:'',
+        specialization:'',
+        university:'',
+        graduationYear:'',
+        highestEducation:'',
+        profession:'',
+        currentUniversity:'',
+      },
     };
   }
 
@@ -23,6 +36,15 @@ class RegistrationForm extends Component {
     this.setState({ category });
   }
 
+  handleRegister = async()=>{
+    try{
+      const response = await axios.post('/api/auth/register',this.state.userDetails);
+      console.log(response.data);
+    }
+    catch(error){
+      console.error('Registration error:',error.message);
+    }
+  }
   render() {
     return (
       <div className='register-container'>
