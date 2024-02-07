@@ -76,3 +76,27 @@ button.talk{
 talk:hover{
     background-color: #2563EB; 
 }
+
+.chatbox {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.message-content {
+  flex-grow: 1;
+  border: 0.1rem solid rgb(132, 132, 132);
+  background-color: #ebebeb;
+  border-radius: 1rem;
+  padding-left: 1rem;
+}

@@ -1,16 +1,18 @@
 // Server/index.js
-
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // Initialize Express app
 const app = express();
-
+app.use(cors());
 // Parse incoming requests with JSON payloads
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://ssuryansshh:edUnity.Grow@edunity.e7tuhup.mongodb.net/?retryWrites=true&w=majority');
+const uri = process.env.MONGODB_URL;
+mongoose.connect(uri);
 
 // Check MongoDB connection
 mongoose.connection.on('connected', () => {
@@ -23,20 +25,20 @@ mongoose.connection.on('error', (err) => {
 
 // Routes
 const authRoutes = require('./routes/userRoutes');
-const discussionRoutes = require('./routes/discussionRoutes');
+const talkSphereRoutes = require('./routes/TalkSphereRoutes');
 const mentorshipRoutes = require('./routes/mentorshipRoutes');
 const anxietyRoutes = require('./routes/anxietysessionRoutes');
 const doubtRoutes = require('./routes/doubtRoutes');
 
 // Use the routes
 app.use('/api/auth', authRoutes);
-app.use('/api/discussion', discussionRoutes);
+app.use('/api/talksphere', talkSphereRoutes);
 app.use('/api/mentorship', mentorshipRoutes);
 app.use('/api/anxiety', anxietyRoutes);
 app.use('/api/doubt', doubtRoutes);
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
