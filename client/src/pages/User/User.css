@@ -1,0 +1,87 @@
+.left-dashboard {
+    position: fixed;
+    width: 8%;/* width of dashboard */
+    background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+    min-height: 82vh;
+    overflow-y: auto;
+    display: grid;
+    grid-template-rows: 15% 10% 10% 10% 10% 10% 10% 12.5% 12.5%;
+    text-align: center;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgb(211, 211, 211);
+  }
+  .dashboard {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    align-items: center;
+    padding-top: 20%;
+  }
+  .dashboard:hover{
+    background-color: beige;
+  }
+  .dash-link{
+    color: black;
+    text-decoration: none;
+    font-size: large;
+  }
+  .user-container{
+    height: 82vh;
+  }
+  .user-details{
+    margin-left: 8.2%;
+    margin-bottom: 0.2%;
+    margin-right: 0.2%;
+  }
+  .user-details-container{
+    height: 81.5vh;
+    padding: 2rem;
+    display: flex;
+    gap: 3rem;
+  }
+.profile{
+    border: 1px solid rgb(222, 222, 222);
+    height: 93%;
+    width: 20%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.profile-details{
+    margin-top: 1rem;
+    align-items: center;
+    text-align: center;
+    width:100%
+}
+.delete-user{
+    margin-bottom: 1rem;
+    align-items: center;
+    width: 100%;
+}
+.account-details{
+    border: 1px solid rgb(218, 216, 216);
+    width: 80%;
+    height: 93%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 0.1rem;
+}
+h1.user{
+    font-size: 4rem;
+}
+.recent-activity{
+    border: 1px solid rgb(225, 224, 224);
+    border-radius: 1rem;
+    height: 50%;
+    margin:1%;
+    width: 98%;
+}
+p.user{
+    font-size: large;
+}
+h4.user{
+    font-size: larger;
+}

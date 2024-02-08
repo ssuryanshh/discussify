@@ -78,12 +78,18 @@ h1.joy{
     color: #ff5858;
   }
   
-  .SmallIcon {
+  .SmallIcon{
     width: 0px;
     height: 0px;
     transform: translate(10px,10px);
     border-radius: 10px;
-    background-color: #ff5858;
+    transition: 0.2s;
+  }
+  img.game-icon{
+    width: 0px;
+    height: 0px;
+    transform: translate(10px,10px);
+    border-radius: 10px;
     transition: 0.2s;
   }
   
@@ -91,10 +97,12 @@ h1.joy{
     padding: 10px;
     position: absolute;
     transform: translate(0px,20px);
+    width: 13rem;
+    margin-top: 1rem;
     opacity: 0%;
     color: #ff5858;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
   }
   
   .StarIcon {
@@ -120,13 +128,17 @@ h1.joy{
     height: 100%;
   }
   
-  .GameImg:hover .SmallIcon {
-    width: 60px;
-    height: 60px;
+  .GameImg:hover .SmallIcon{
+    width: 55px;
+    height: 55px;
+  }
+  .GameImg:hover .SmallIcon img.game-icon{
+    width: 55px;
+    height: 55px;
   }
   
   .GameImg:hover .Name {
-    transform: translate(75px,-235px);
+    transform: translate(83px,-235px);
   }
   
   .GameImg:hover .GameIcon {
@@ -220,6 +232,7 @@ h1.joy{
     bottom: 0;
     opacity: 0;
     transition: 0.3s ease-out;
+    cursor: pointer;
    }
    
    .quiz-body {

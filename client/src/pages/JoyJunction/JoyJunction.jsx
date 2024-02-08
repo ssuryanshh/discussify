@@ -1,11 +1,15 @@
 import React from "react";
 import "./JoyJunction.css";
+import dino from "./dino.jpg"
+import skribble from "./skribbl.io.jpg";
+import street_skater from "./street_skater.png";
+import sunset_bike_racer from "./sunset_bike_racer.jpg";
 function JoyJunction() {
   return (
     <div className="joyjuction-container">
       <div className="joy-head">
         <h1 className="junction">JoyJunction</h1>
-        <p> relief your stress by enjoying some of our fun activites</p>
+        <p className="joy-head"> relief your stress by enjoying some of our fun activites</p>
       </div>
       <div className="joy-main">
         <div className="games-comntainer">
@@ -14,7 +18,7 @@ function JoyJunction() {
             <div class="game-card">
               <div class="GameImg">
                 <div class="Gfooter">
-                  <div class="SmallIcon"></div>
+                  <div class="SmallIcon"><img src={dino} className="game-icon"></img></div>
                   <span class="Stars">
                     <svg
                       preserveAspectRatio="xMidYMid meet"
@@ -35,7 +39,7 @@ function JoyJunction() {
                     </svg>
                     5/5
                   </span>
-                  <span class="Descripion">This is Descripion of The Game</span>
+                  <span class="Descripion">Similar to the original Dino game</span>
                 </div>
 
                 <svg
@@ -55,19 +59,21 @@ function JoyJunction() {
                     <path d="M427 471 c-2 -11 -36 -35 -78 -57 -62 -33 -77 -46 -94 -81 -14 -30 -24 -41 -35 -36 -64 25 -90 27 -117 7 -58 -42 -115 -185 -99 -248 19 -76 81 -73 195 9 19 14 41 25 50 25 9 0 43 -18 75 -40 33 -22 70 -43 83 -46 64 -16 101 30 89 113 -7 56 -62 159 -99 187 -28 20 -56 18 -121 -9 -16 -7 -17 -5 -11 16 12 39 36 60 102 90 56 25 83 50 83 78 0 18 -17 12 -23 -8z m-41 -252 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-236 -14 c0 -8 7 -15 15 -15 8 0 15 -7 15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 -7 -15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 -7 15 -15 15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 7 15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m196 -26 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m80 0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-40 -40 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"></path>
                   </g>
                 </svg>
-                <span class="Name">Game Name</span>
+                <span class="Name">Chrome Dino</span>
               </div>
+              <a href="https://chromedino.com/">
               <button class="button" data-text="Awesome">
                 <span class="actual-text">&nbsp;Play&nbsp;</span>
                 <span aria-hidden="true" class="hover-text">
                   &nbsp;Play&nbsp;
                 </span>
               </button>
+              </a>
             </div>
             <div class="game-card">
               <div class="GameImg">
                 <div class="Gfooter">
-                  <div class="SmallIcon"></div>
+                  <div class="SmallIcon"><img src={skribble} className="game-icon"></img></div>
                   <span class="Stars">
                     <svg
                       preserveAspectRatio="xMidYMid meet"
@@ -88,7 +94,7 @@ function JoyJunction() {
                     </svg>
                     5/5
                   </span>
-                  <span class="Descripion">This is Descripion of The Game</span>
+                  <span class="Descripion">Multiplayer drawing & guessing game</span>
                 </div>
 
                 <svg
@@ -108,19 +114,21 @@ function JoyJunction() {
                     <path d="M427 471 c-2 -11 -36 -35 -78 -57 -62 -33 -77 -46 -94 -81 -14 -30 -24 -41 -35 -36 -64 25 -90 27 -117 7 -58 -42 -115 -185 -99 -248 19 -76 81 -73 195 9 19 14 41 25 50 25 9 0 43 -18 75 -40 33 -22 70 -43 83 -46 64 -16 101 30 89 113 -7 56 -62 159 -99 187 -28 20 -56 18 -121 -9 -16 -7 -17 -5 -11 16 12 39 36 60 102 90 56 25 83 50 83 78 0 18 -17 12 -23 -8z m-41 -252 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-236 -14 c0 -8 7 -15 15 -15 8 0 15 -7 15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 -7 -15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 -7 15 -15 15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 7 15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m196 -26 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m80 0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-40 -40 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"></path>
                   </g>
                 </svg>
-                <span class="Name">Game Name</span>
+                <span class="Name">Scribbl.io</span>
               </div>
+              <a href="https://skribbl.io/">
               <button class="button" data-text="Awesome">
                 <span class="actual-text">&nbsp;Play&nbsp;</span>
                 <span aria-hidden="true" class="hover-text">
                   &nbsp;Play&nbsp;
                 </span>
               </button>
+              </a>
             </div>
             <div class="game-card">
               <div class="GameImg">
                 <div class="Gfooter">
-                  <div class="SmallIcon"></div>
+                  <div class="SmallIcon"><img src={sunset_bike_racer} className="game-icon"></img></div>
                   <span class="Stars">
                     <svg
                       preserveAspectRatio="xMidYMid meet"
@@ -141,7 +149,7 @@ function JoyJunction() {
                     </svg>
                     5/5
                   </span>
-                  <span class="Descripion">This is Descripion of The Game</span>
+                  <span class="Descripion">If you are a fan of bike racing and stunts, this might be the right game.</span>
                 </div>
 
                 <svg
@@ -161,19 +169,21 @@ function JoyJunction() {
                     <path d="M427 471 c-2 -11 -36 -35 -78 -57 -62 -33 -77 -46 -94 -81 -14 -30 -24 -41 -35 -36 -64 25 -90 27 -117 7 -58 -42 -115 -185 -99 -248 19 -76 81 -73 195 9 19 14 41 25 50 25 9 0 43 -18 75 -40 33 -22 70 -43 83 -46 64 -16 101 30 89 113 -7 56 -62 159 -99 187 -28 20 -56 18 -121 -9 -16 -7 -17 -5 -11 16 12 39 36 60 102 90 56 25 83 50 83 78 0 18 -17 12 -23 -8z m-41 -252 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-236 -14 c0 -8 7 -15 15 -15 8 0 15 -7 15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 -7 -15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 -7 15 -15 15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 7 15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m196 -26 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m80 0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-40 -40 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"></path>
                   </g>
                 </svg>
-                <span class="Name">Game Name</span>
+                <span class="Name">Sunset Racer</span>
               </div>
+              <a href="https://kamgam.itch.io/sunset-bike-racer-2d-motocross-racing">
               <button class="button" data-text="Awesome">
                 <span class="actual-text">&nbsp;Play&nbsp;</span>
                 <span aria-hidden="true" class="hover-text">
                   &nbsp;Play&nbsp;
                 </span>
               </button>
+              </a>
             </div>
             <div class="game-card">
               <div class="GameImg">
                 <div class="Gfooter">
-                  <div class="SmallIcon"></div>
+                  <div class="SmallIcon"><img src={street_skater} className="game-icon"></img></div>
                   <span class="Stars">
                     <svg
                       preserveAspectRatio="xMidYMid meet"
@@ -194,7 +204,7 @@ function JoyJunction() {
                     </svg>
                     5/5
                   </span>
-                  <span class="Descripion">This is Descripion of The Game</span>
+                  <span class="Descripion">Street Skater is a retro-style skating game</span>
                 </div>
 
                 <svg
@@ -214,14 +224,16 @@ function JoyJunction() {
                     <path d="M427 471 c-2 -11 -36 -35 -78 -57 -62 -33 -77 -46 -94 -81 -14 -30 -24 -41 -35 -36 -64 25 -90 27 -117 7 -58 -42 -115 -185 -99 -248 19 -76 81 -73 195 9 19 14 41 25 50 25 9 0 43 -18 75 -40 33 -22 70 -43 83 -46 64 -16 101 30 89 113 -7 56 -62 159 -99 187 -28 20 -56 18 -121 -9 -16 -7 -17 -5 -11 16 12 39 36 60 102 90 56 25 83 50 83 78 0 18 -17 12 -23 -8z m-41 -252 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-236 -14 c0 -8 7 -15 15 -15 8 0 15 -7 15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 -7 -15 -15 0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 -7 15 -15 15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 7 15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m196 -26 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m80 0 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z m-40 -40 c10 -17 -13 -36 -27 -22 -12 12 -4 33 11 33 5 0 12 -5 16 -11z"></path>
                   </g>
                 </svg>
-                <span class="Name">Game Name</span>
+                <span class="Name">Street Skater</span>
               </div>
+              <a href="https://armorgames.com/street-skater-game/18047">
               <button class="button" data-text="Awesome">
                 <span class="actual-text">&nbsp;Play&nbsp;</span>
                 <span aria-hidden="true" class="hover-text">
                   &nbsp;Play&nbsp;
                 </span>
               </button>
+              </a>
             </div>
           </div>
         </div>
@@ -230,31 +242,31 @@ function JoyJunction() {
           <div className="quiz-card-container">
             <div class="quiz-card">
               <div class="quiz-card-details">
-                <p class="quiz-title">Quiz title</p>
-                <p class="quiz-body">Here are the details of the quiz</p>
+                <p class="quiz-title">Quiz 1</p>
+                <p class="quiz-body">Can You Guess What Happens Next?</p>
               </div>
-              <button class="quiz-card-button">Attempt Quiz</button>
+              <a href="https://www.proprofs.com/quiz-school/story.php?title=can-you-guess-what-happens-next"><button class="quiz-card-button">Attempt Quiz</button></a>
             </div>
             <div class="quiz-card">
               <div class="quiz-card-details">
-                <p class="quiz-title">Quiz title</p>
-                <p class="quiz-body">Here are the details of the quiz</p>
+                <p class="quiz-title">Quiz 2</p>
+                <p class="quiz-body">The First-Year Hogwarts Houses Quiz</p>
               </div>
-              <button class="quiz-card-button">Attempt Quiz</button>
+              <a href="https://www.wizardingworld.com/quiz/the-first-year-hogwarts-houses-quiz"><button class="quiz-card-button">Attempt Quiz</button></a>
             </div>
            <div class="quiz-card">
               <div class="quiz-card-details">
-                <p class="quiz-title">Card title</p>
-                <p class="quiz-body">Here are the details of the card</p>
+                <p class="quiz-title">Quiz 3</p>
+                <p class="quiz-body">The Ultimate Social Media Quiz</p>
               </div>
-              <button class="quiz-card-button">More info</button>
+              <a href="https://premade.outgrow.us/social_media_quiz"><button class="quiz-card-button">Attemp Quiz</button></a>
             </div>
             <div class="quiz-card">
               <div class="quiz-card-details">
-                <p class="quiz-title">Card title</p>
-                <p class="quiz-body">Here are the details of the card</p>
+                <p class="quiz-title">Quiz 4</p>
+                <p class="quiz-body">Flags of the World Quiz!</p>
               </div>
-              <button class="quiz-card-button">More info</button>
+              <a href="https://premade.outgrow.us/flags_of_the_world_quiz"><button class="quiz-card-button">Attempt Quiz</button></a>
             </div>
           
           </div>
