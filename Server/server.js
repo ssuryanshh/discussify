@@ -1,3 +1,5 @@
+
+
 // Server/index.js
 require('dotenv').config();
 const express = require('express');
@@ -28,7 +30,8 @@ const authRoutes = require('./routes/userRoutes');
 const talkSphereRoutes = require('./routes/TalkSphereRoutes');
 const mentorshipRoutes = require('./routes/mentorshipRoutes');
 const anxietyRoutes = require('./routes/anxietysessionRoutes');
-const doubtRoutes = require('./routes/doubtRoutes');
+const doubtRoutes = require('./routes/ClarityHubRoutes');
+const contactRoutes = require('./routes/contactRoutes')
 
 // Use the routes
 app.use('/api/auth', authRoutes);
@@ -36,9 +39,11 @@ app.use('/api/talksphere', talkSphereRoutes);
 app.use('/api/mentorship', mentorshipRoutes);
 app.use('/api/anxiety', anxietyRoutes);
 app.use('/api/doubt', doubtRoutes);
+app.use('/api/contact', contactRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
