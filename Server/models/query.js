@@ -4,7 +4,6 @@ const querySchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
     trim: true, // Remove leading/trailing whitespace
     lowercase: true, // Convert to lowercase
     match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email address'], // Email format validation

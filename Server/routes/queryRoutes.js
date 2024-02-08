@@ -1,6 +1,8 @@
+
+
 const express = require('express');
 const router = express.Router();
-const Query = require('../models/Contact');
+const Query = require('../models/query');
 
 // Route to handle the creation of a new query
 router.post('/create', async (req, res) => {
