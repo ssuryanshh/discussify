@@ -4,6 +4,7 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Feedback from "./pages/Feedback/Feedback";
 import Login from "./pages/Login/Login";
+import Error from "./pages/Error/Error";
 import Services from "./pages/Services/Services";
 import Register from "./pages/Register/Register";
 import Footer  from "./components/Footer/Footer";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/mentor_magic" element={<MentorMagic/>}/>
         <Route path="/mind_ease" element={<MindEase/>}/>
         <Route path="/talk_sphere" element={<TalkSphere/>}/>
+        <Route path="*" element={<Error/>}></Route>
       </Routes>
       <div></div>
       <Footer/> 

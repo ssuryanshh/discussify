@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the Doubt model and any other necessary modules
-const Doubt = require('../models/doubt');
+const Doubt = require('../models/ClarityHub');
 
 // Route to get all doubts with usernames
 router.get('/doubts', async (req, res) => {

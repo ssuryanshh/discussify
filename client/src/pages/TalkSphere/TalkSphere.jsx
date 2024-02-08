@@ -5,6 +5,7 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { toast } from 'react-toastify';
 function TalkSphere() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -41,6 +42,7 @@ function TalkSphere() {
   const deleteMessage = async (messageId) => {
     try {
       await axios.delete(`http://localhost:3001/api/talksphere/messages/${messageId}`);
+      toast("message  deleted");
       fetchLast5Messages(); // Refresh messages after deleting
     } catch (error) {
       console.error('Error deleting message:', error);
