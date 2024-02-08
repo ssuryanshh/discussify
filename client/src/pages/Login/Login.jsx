@@ -16,9 +16,9 @@ function Login() {
       const response = await axios.post("http://localhost:3001/api/auth/login", loginData);
   
       if (response.status === 200) {
-        console.log("Login Sucess");
+        alert("login successs")
       } else {
-        console.log("Login failed");
+        alert("Login failed");
       }
     } catch (error) {
       console.log("Login Error", error.message);
@@ -27,8 +27,11 @@ function Login() {
   const handleRegister = async () => {
     try {
       const response = await axios.post("http://localhost:3001/api/auth/register", registerData);
-      console.log(response.data);
-    } catch (error) {
+      if (response.status === 200) {
+        alert("registration successs")
+      } else {
+        alert("Login failed");
+      }} catch (error) {
       console.log("Register Error", error.message);
     }
   };

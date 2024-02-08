@@ -33,7 +33,7 @@ router.get("/messages", async (req, res) => {
 // Route to post a new message with current timestamp
 router.post("/messages", async (req, res) => {
   const { text } = req.body;
-  const username = "rituraj"; // Set the username to "suryansh"
+  const username = "suryansh"; // Set the username to "suryansh"
 
   if (!text) {
     return res.status(400).json({ message: "Text is required" });

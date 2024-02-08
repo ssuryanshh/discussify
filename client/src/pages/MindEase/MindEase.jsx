@@ -1,9 +1,8 @@
 import React from 'react'
-
 function MindEase() {
   return (
     <div>
-    Coming Soon...
+      coming soon....
     </div>
   )
 }
