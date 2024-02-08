@@ -18,6 +18,8 @@ import MindEase from "./pages/MindEase/MindEase";
 import TalkSphere from "./pages/TalkSphere/TalkSphere";
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
+
+import User from "./pages/User/User";
 function App() {
   return (
     <BrowserRouter>
@@ -38,6 +40,7 @@ function App() {
         <Route path="/mentor_magic" element={<MentorMagic/>}/>
         <Route path="/mind_ease" element={<MindEase/>}/>
         <Route path="/talk_sphere" element={<TalkSphere/>}/>
+        <Route path="/user" element={<User/>}/>
         <Route path="*" element={<Error/>}></Route>
       </Routes>
       <div></div>
