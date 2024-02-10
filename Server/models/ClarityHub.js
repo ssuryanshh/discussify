@@ -19,7 +19,10 @@ const clarityhubSchema = new mongoose.Schema({
     {
       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
       content: { type: String, required: true },
-      selectedBestAnswer: { type: Boolean, default: false }, // Added selectedBestAnswer field
+      timestamp:{
+        type: Date,
+        default: Date.now,
+      }
     },
   ],
 });
