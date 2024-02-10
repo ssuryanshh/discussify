@@ -30,7 +30,7 @@ const authRoutes = require('./routes/userRoutes');
 const talkSphereRoutes = require('./routes/TalkSphereRoutes');
 const mentorshipRoutes = require('./routes/mentorshipRoutes');
 const anxietyRoutes = require('./routes/anxietysessionRoutes');
-const doubtRoutes = require('./routes/ClarityHubRoutes');
+const clarityHubRoutes = require('./routes/ClarityHubRoutes');
 const queryRoutes = require('./routes/queryRoutes')
 
 // Use the routes
@@ -38,7 +38,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/talksphere', talkSphereRoutes);
 app.use('/api/mentorship', mentorshipRoutes);
 app.use('/api/anxiety', anxietyRoutes);
-app.use('/api/doubt', doubtRoutes);
+app.use('/api/clarityhub', clarityHubRoutes);
 app.use('/api/query', queryRoutes);
 
 // Start the server

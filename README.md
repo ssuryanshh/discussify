@@ -6,6 +6,8 @@
 **API Documentation :** https://documenter.getpostman.com/view/323324362s9YymFja
 
 **Render Link:**  https://ed-unity.onrender.com/
+
+**Demo Linj:** https://youtu.be/ZS4WUlynjkg
 ## Which problem Project is Solving?
 
 The project is developed to provide students a centralised platform where they can avail almost all the services they require during their study duration. The tagline of the project : **Collaborate. Learn. Grow** explains the motive behind the project which is **_Empowering Education and Connecting Minds._** 

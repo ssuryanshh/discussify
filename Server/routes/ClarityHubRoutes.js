@@ -2,130 +2,80 @@
 
 const express = require('express');
 const router = express.Router();
+const ClarityHub = require ('../models/ClarityHub');
 
-// Import the Doubt model and any other necessary modules
-const Doubt = require('../models/ClarityHub');
-
-// Route to get all doubts with usernames
-router.get('/doubts', async (req, res) => {
+router.post('/postQuestion', async (req, res) => {
+  const { question } = req.body;
   try {
-    const doubts = await Doubt.find().populate('user', 'username');
-    res.json(doubts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
-// Route to get doubts by category (e.g., school, college, professional) with usernames
-router.get('/doubts/:category', async (req, res) => {
-  const category = req.params.category.toLowerCase();
-
-  try {
-    const doubts = await Doubt.find({ category }).populate('user', 'username');
-    res.json(doubts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
-
-// Route to create a new doubt with username
-router.post('/ask-doubt', async (req, res) => {
-  try {
-    const { userId, category, question } = req.body;
-
-    const newDoubt = new Doubt({
-      user: userId,
-      category,
+    const newQuestion = new ClarityHub({
+      username: 'suryansh', // Static username for now
       question,
     });
 
-    const savedDoubt = await newDoubt.save();
+    await newQuestion.save();
 
-    // Populate the user field to get the username
-    const doubtWithUsername = await Doubt.populate(savedDoubt, 'user', 'username');
-
-    res.status(201).json(doubtWithUsername);
+    res.status(201).json({ message: 'Question posted successfully' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-// Route to answer a doubt with username
-router.post('/answer-doubt/:id', async (req, res) => {
-  const doubtId = req.params.id;
+// Route to get all questions
+router.get('/getQuestions', async (req, res) => {
+  try {
+    const questions = await ClarityHub.find().sort({ timestamp: -1 });
+
+    res.status(200).json({ questions });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Route to get question details
+router.get('/getQuestionDetails/:questionId', async (req, res) => {
+  const { questionId } = req.params;
 
   try {
-    const { userId, answer } = req.body;
-
-    const doubt = await Doubt.findById(doubtId);
-
-    if (!doubt) {
-      return res.status(404).json({ error: 'Doubt not found' });
+    const questionDetails = await ClarityHub.findById(questionId);
+    if (!questionDetails) {
+      return res.status(404).json({ error: 'Question not found' });
     }
 
-    // Add logic to check if the user is allowed to answer the doubt based on categories
+    const answers = questionDetails.answers;
 
-    doubt.answers.push({ user: userId, answer });
-    const savedDoubt = await doubt.save();
-
-    // Populate the user field to get the username
-    const doubtWithUsername = await Doubt.populate(savedDoubt, 'answers.user', 'username');
-
-    res.json(doubtWithUsername);
+    res.status(200).json({ question: { question: questionDetails.question, username: questionDetails.username }, answers });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-// Route to select the best answer and award credits
-router.patch('/select-best-answer/:doubtId/:answerId', async (req, res) => {
-    const doubtId = req.params.doubtId;
-    const answerId = req.params.answerId;
-  
-    try {
-      const doubt = await Doubt.findById(doubtId);
-  
-      if (!doubt) {
-        return res.status(404).json({ error: 'Doubt not found' });
-      }
-  
-      const selectedAnswer = doubt.answers.find(answer => answer._id.toString() === answerId);
-  
-      if (!selectedAnswer) {
-        return res.status(404).json({ error: 'Answer not found' });
-      }
-  
-      // Check if the user selecting the best answer is the one who asked the doubt
-      if (doubt.user.toString() !== req.body.userId) {
-        return res.status(403).json({ error: 'Permission denied' });
-      }
-  
-      // Award bonus credits to the best answer user (20 credits)
-      const bestAnswerUser = selectedAnswer.user;
-      bestAnswerUser.credits += 20;
-  
-      // Award bonus credits to all other users who answered (5 credits each)
-      doubt.answers.forEach(answer => {
-        if (answer._id.toString() !== answerId) {
-          answer.user.credits += 5;
-        }
-      });
-  
-      // Save changes to the database
-      await bestAnswerUser.save();
-      await Promise.all(doubt.answers.map(answer => answer.user.save()));
-  
-      res.json({ message: 'Best answer selected and credits awarded successfully' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
+// Route to post an answer
+router.post('/postAnswer/:questionId', async (req, res) => {
+  const { questionId } = req.params;
+  const { answer } = req.body;
+
+  try {
+    const question = await ClarityHub.findById(questionId);
+    if (!question) {
+      return res.status(404).json({ error: 'Question not found' });
     }
-  });
-  
-    
-  module.exports = router;
-  
+
+    // Assuming you have a user authentication system and you get the user ID from the authenticated user
+    const userId = 'USER_ID'; // Replace with your actual user ID
+
+    // Add the new answer to the question's answers array
+    question.answers.push({ user: userId, content: answer });
+
+    await question.save();
+
+    res.status(201).json({ message: 'Answer posted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+module.exports = router;

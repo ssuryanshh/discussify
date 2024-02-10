@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import "./Login.css";
 import axios from 'axios';
+import { NavLink } from "react-router-dom";
+
+
+
 function Login() {
  // const  navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
@@ -11,12 +15,17 @@ function Login() {
     password: "",
   });
 
+
+
+
+  const navigate = useNavigate();
+
   const handleLogin = async () => {
     try {
       const response = await axios.post("http://localhost:3001/api/auth/login", loginData);
-  
       if (response.status === 200) {
-        alert("login successs")
+        alert("Login success");
+        navigate('/user');
       } else {
         alert("Login failed");
       }
@@ -24,6 +33,8 @@ function Login() {
       console.log("Login Error", error.message);
     }
   };
+  
+
   const handleRegister = async () => {
     try {
       const response = await axios.post("http://localhost:3001/api/auth/register", registerData);
@@ -35,18 +46,21 @@ function Login() {
       console.log("Register Error", error.message);
     }
   };
+
+
+
   return (
     <div className="login">
-      <div class="wrapper">
-        <div class="card-switch">
-          <label class="switch">
-            <input type="checkbox" class="toggle"></input>
-            <span class="slider"></span>
-            <span class="card-side"></span>
-            <div class="flip-card__inner">
-              <div class="flip-card__front">
-                <div class="title">Log in</div>
-                <form class="flip-card__form" action="">
+      <div className="wrapper">
+        <div className="card-switch">
+          <label className="switch">
+            <input type="checkbox" className="toggle"></input>
+            <span className="slider"></span>
+            <span className="card-side"></span>
+            <div className="flip-card__inner">
+              <div className="flip-card__front">
+                <div className="title">Log in</div>
+                <form className="flip-card__form" action="">
                   <input
                     className="flip-card__input"
                     name="email"
@@ -69,14 +83,21 @@ function Login() {
                       setLoginData({ ...loginData, password: e.target.value })
                     }
                   ></input>
-                  <button className="flip-card__btn" onClick={handleLogin}>
+                  {/* <button className="flip-card__btn" onClick={handleLogin}>
                     Let's go!
-                  </button>
+                  </button> */}
+
+                  <NavLink to="/user">
+                    <button className="flip-card__btn" variant="contained">
+                      Let's go!
+                    </button>
+                  </NavLink>
+
                 </form>
               </div>
-              <div class="flip-card__back">
-                <div class="title">Sign up</div>
-                <form class="flip-card__form" action="">
+              <div className="flip-card__back">
+                <div className="title">Sign up</div>
+                <form className="flip-card__form" action="">
                   <input
                     className="flip-card__input"
                     placeholder="username"
