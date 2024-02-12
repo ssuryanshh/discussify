@@ -12,7 +12,7 @@ The edUnity project aims to provide a centralized platform for students to colla
 - HTML
 - CSS
 - JavaScript
-- Other relevant libraries (if any)
+- Material UI
 
 ## Getting Started
 
