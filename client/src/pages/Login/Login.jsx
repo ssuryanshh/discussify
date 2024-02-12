@@ -22,7 +22,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/login", loginData);
+      const response = await axios.post("https://edunity.onrender.com/api/auth/login", loginData);
       if (response.status === 200) {
         alert("Login success");
         navigate('/user');
@@ -37,7 +37,7 @@ function Login() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/api/auth/register", registerData);
+      const response = await axios.post("https://edunity.onrender.com/api/auth/register", registerData);
       if (response.status === 200) {
         alert("registration successs")
       } else {
