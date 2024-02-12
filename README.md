@@ -1,4 +1,4 @@
-<img src="./client/src/assets/logo.png" alt="logo" width="60" height="60" align="right"/>
+<center><img src="./client/src/assets/logo.png" alt="logo" width="100" height="100"/></center>
 <br>
 
 # edUnity : Collaborate. Learn. Grow
