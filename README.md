@@ -1,10 +1,12 @@
-# edUnity : Collaborate. Learn. Grow
+<img src="./client/src/assets/logo.png" alt="logo" width="60" height="60" align="right"/>
+<br>
 
+# edUnity : Collaborate. Learn. Grow
 # Developer : Suryansh Srivastav
 
 ### Deployment Links :  
-<center><img src="./client/src/assets/logo.png" alt="logo" width="200" height="200">
-</center>
+
+
 
 **Front-End:**  https://ed-unity.netlify.app/ 
 
