@@ -20,7 +20,7 @@ function ClarityHub() {
 
   const fetchRecentQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/clarityhub/getQuestions');
+      const response = await axios.get('https://edunity.onrender.com/api/clarityhub/getQuestions');
       setRecentQuestions(response.data.questions);
     } catch (error) {
       console.error('Error fetching recent questions:', error);
@@ -29,7 +29,7 @@ function ClarityHub() {
 
   const handleQuestionSubmit = async () => {
     try {
-      await axios.post('http://localhost:3001/api/clarityhub/postQuestion', {
+      await axios.post('https://edunity.onrender.com/api/clarityhub/postQuestion', {
         question,
       });
       // Fetch the updated questions after posting

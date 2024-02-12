@@ -14,7 +14,7 @@ function Contact() {
     };
 
     try {
-      const response = await axios.post('http://localhost:3001/api/query/create', requestData);
+      const response = await axios.post('https://edunity.onrender.com/api/query/create', requestData);
 
       if (response.status === 201) {
         // Handle successful submission (e.g., show a success message)
