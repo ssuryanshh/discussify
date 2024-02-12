@@ -16,7 +16,7 @@ function TalkSphere() {
 
   const fetchLast5Messages = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/talksphere/messages');
+      const response = await axios.get('https://edunity.onrender.com/api/talksphere/messages');
       setMessages(response.data);
     } catch (error) {
       console.error('Error fetching messages:', error);
@@ -27,10 +27,10 @@ function TalkSphere() {
     try {
       if (editableMessage) {
         // If editing a message
-        await axios.put(`http://localhost:3001/api/talksphere/messages/${editableMessage._id}`, { text: newMessage });
+        await axios.put(`https://edunity.onrender.com/api/talksphere/messages/${editableMessage._id}`, { text: newMessage });
       } else {
         // If posting a new message
-        await axios.post('http://localhost:3001/api/talksphere/messages', { text: newMessage });
+        await axios.post('https://edunity.onrender.com/api/talksphere/messages', { text: newMessage });
       }
       fetchLast5Messages(); // Refresh messages after editing or posting
       setNewMessage(''); // Clear the textarea
@@ -41,7 +41,7 @@ function TalkSphere() {
   };
   const deleteMessage = async (messageId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/talksphere/messages/${messageId}`);
+      await axios.delete(`https://edunity.onrender.com/api/talksphere/messages/${messageId}`);
       toast("message  deleted");
       fetchLast5Messages(); // Refresh messages after deleting
     } catch (error) {

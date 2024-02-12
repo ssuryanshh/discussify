@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./NavBar.css";
 import React from 'react';
 import logo from "./brand.png"
@@ -14,19 +14,19 @@ function NavBar() {
             <nav>
             <ul className="nav-links-container">
                     <li className="links">
-                        <NavLink to="/" activeClassName="active" className="nav-link">HOME</NavLink>
+                        <Link to="/" activeClassName="active" className="nav-link">HOME</Link>
                     </li >
                     <li className="links">
-                        <NavLink to="/services" activeClassName="active" className="nav-link">SERVICES</NavLink>
+                        <Link to="/services" activeClassName="active" className="nav-link">SERVICES</Link>
                     </li>
                     <li className="links">
-                        <NavLink to="/about" activeClassName="active" className="nav-link">ABOUT</NavLink>
+                        <Link to="/about" activeClassName="active" className="nav-link">ABOUT</Link>
                     </li>
                     <li className="links">
-                        <NavLink to="/contact" activeClassName="active" className="nav-link">CONTACT</NavLink>
+                        <Link to="/contact" activeClassName="active" className="nav-link">CONTACT</Link>
                     </li>   
                     <li className="links">
-                            <NavLink to="/login" ><button className = "ed-register" type="button">LOGIN / REGISTER</button></NavLink>
+                            <Link to="/login" ><button className = "ed-register" type="button">LOGIN / REGISTER</button></Link>
                     </li>
                 </ul>
             </nav>
