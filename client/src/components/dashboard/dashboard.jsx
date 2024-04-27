@@ -37,8 +37,10 @@ function dashboard() {
         <h3>Account</h3>
       </div>
       <div className="dashboard">
-        <h3>Logout</h3>
-      </div>
+        <NavLink to="/joy_junction" className="dash-link">
+          JoyJunction
+        </NavLink>
+        </div>
     </div>
   );
 }

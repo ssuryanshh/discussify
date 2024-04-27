@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { UserProvider } from './context/UserContext';
 import './App.css';
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
@@ -30,7 +31,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact/*" element={<Contact />} />
         <Route path="/feedback"  element={<Feedback />} />
+        <UserProvider>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/user" element={<User/>}/>
+        </UserProvider>
         <Route path="/services" element={<Services/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/profile" element={<Profile/>}/>
@@ -41,7 +45,6 @@ function App() {
         <Route path="/mentor_magic" element={<MentorMagic/>}/>
         <Route path="/mind_ease" element={<MindEase/>}/>
         <Route path="/talk_sphere" element={<TalkSphere/>}/>
-        <Route path="/user" element={<User/>}/>
         <Route path="/clarity_hub_answers/:questionId" element={<ClarityHub_Answers/>} />
         <Route path="*" element={<Error/>}></Route>
       </Routes>

@@ -1,6 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const User = require('../models/userdetails');
+const jwt = require('jsonwebtoken'); // For token-based authentication
+const User = require('../models/userdetails'); // Assuming userdetails.js exists
 
 const router = express.Router();
 
@@ -28,7 +29,9 @@ router.post('/register', async (req, res) => {
     // Save the user to the database
     await newUser.save();
 
-    res.status(201).json({ message: 'Registration successful' });
+    // Send a success response (optionally include user ID)
+    res.status(201).json({ message: 'Registration successful' }); // You can include user ID here
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -52,7 +55,9 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
 
-    res.status(200).json({ message: 'Login successful' });
+    
+    res.status(200).json({ message: 'Login successful', user: { id: user._id, username: user.username } });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });

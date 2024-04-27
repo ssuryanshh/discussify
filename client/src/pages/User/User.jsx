@@ -37,11 +37,15 @@ function user() {
       </div>
       <div></div>
       <div className="dashboard">
-        <h3>Account</h3>
-      </div>
+        <NavLink to="/user" className="dash-link">
+          Account
+        </NavLink>
+        </div>
       <div className="dashboard">
-        <h3>Logout</h3>
-      </div>
+        <NavLink to="/" className="dash-link">
+          Logout
+        </NavLink>
+        </div>
     </div>
     <section>
         <div className="user-details">
