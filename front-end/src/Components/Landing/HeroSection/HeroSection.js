@@ -12,7 +12,7 @@ function HeroSection() {
             <Link to={"/user"} ><button className='hero-section-button'>Get Started</button></Link>
             </div>
         <div className='hero-section-image'>
-            <img src='https://res.cloudinary.com/dg6yoc2r4/image/upload/v1722782109/edUnity/home/kcrpxnaymlh1rlgwwufl.jpg'></img>
+            <img src='https://res.cloudinary.com/dg6yoc2r4/image/upload/v1722782109/edUnity/home/kcrpxnaymlh1rlgwwufl.jpg' alt=''></img>
         </div>      
     </div>
   )

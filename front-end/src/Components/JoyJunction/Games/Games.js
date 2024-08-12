@@ -12,7 +12,7 @@ function Games() {
       <div class="game-card">
         <div class="GameImg">
           <div class="Gfooter">
-            <div class="SmallIcon"><img src={dino} className="game-icon"></img></div>
+            <div class="SmallIcon"><img src={dino} className="game-icon" alt=''></img></div>
             <span class="Stars">
               <svg
                 preserveAspectRatio="xMidYMid meet"
@@ -67,7 +67,7 @@ function Games() {
       <div class="game-card">
         <div class="GameImg">
           <div class="Gfooter">
-            <div class="SmallIcon"><img src={skribble} className="game-icon"></img></div>
+            <div class="SmallIcon"><img src={skribble} className="game-icon" alt=''></img></div>
             <span class="Stars">
               <svg
                 preserveAspectRatio="xMidYMid meet"
@@ -122,7 +122,7 @@ function Games() {
       <div class="game-card">
         <div class="GameImg">
           <div class="Gfooter">
-            <div class="SmallIcon"><img src={sunset_bike_racer} className="game-icon"></img></div>
+            <div class="SmallIcon"><img src={sunset_bike_racer} className="game-icon" alt=''></img></div>
             <span class="Stars">
               <svg
                 preserveAspectRatio="xMidYMid meet"
@@ -177,7 +177,7 @@ function Games() {
       <div class="game-card">
         <div class="GameImg">
           <div class="Gfooter">
-            <div class="SmallIcon"><img src={street_skater} className="game-icon"></img></div>
+            <div class="SmallIcon"><img src={street_skater} className="game-icon" alt=''></img></div>
             <span class="Stars">
               <svg
                 preserveAspectRatio="xMidYMid meet"
