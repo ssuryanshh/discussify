@@ -1,0 +1,23 @@
+.previous-question-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+.previous-question-container p{
+    font-size: 2rem;
+    color: var(--main-text-color);
+    line-height: 1.5;
+    text-wrap: wrap;
+}
+
+.previous-question-container h1{
+    font-size: 4rem;
+    color: var(--accent-color);
+}
+
+.previous-question-container a{
+    color: var(--main-text-color);
+    text-decoration: none;
+}

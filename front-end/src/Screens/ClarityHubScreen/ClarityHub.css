@@ -1,0 +1,33 @@
+.clarityhub-screen-container{
+    display: flex;
+    gap: 5rem;
+    
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--navbar-color);
+    width: 100%;
+}
+
+.clarityhub-screen-header{
+    border-bottom: 2px solid var(--navbar-color);
+    width: 100%;
+    padding: 3rem;
+}
+
+.clarityhub-screen-main{
+    display: flex;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+    gap: 10rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.clarityhub-screen-previous{
+    display: flex;
+    max-width: 40%;
+    flex-wrap: wrap;
+}

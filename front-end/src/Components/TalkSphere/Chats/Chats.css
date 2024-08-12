@@ -1,0 +1,43 @@
+/* Chats.css */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: left;
+    width: fit-content;
+    padding: 0.8rem;
+    border-radius: 0.9rem;
+    width: 100%;
+  }
+
+  
+  .chat-message {
+    color: black;
+    font-size: 1.9rem;
+    padding: 0.5rem;
+    background-color: var(--main-text-color);
+    border-radius: 0.5rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    align-self: flex-start; /* Default alignment for received messages */
+  }
+  
+  .chat-message.sent {
+    align-self: flex-end; /* Align sent messages to the right */
+    background-color: #cde7dc; /* Different background color for sent messages */
+  }
+  
+  .chat-message.received {
+    background-color: #f8f9fa; /* Different background color for received messages */
+  }
+  
+strong.chat-user{
+    color: var(--secondary-color);
+}
+  .chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: black;
+  }
+  

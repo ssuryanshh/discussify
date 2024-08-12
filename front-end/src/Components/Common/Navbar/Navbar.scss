@@ -1,0 +1,110 @@
+.navbar {
+  background-color: var(--navbar-color);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    padding: 0px 20px;
+    flex: 1;
+
+    &__main {
+      color: var(--text-color);
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 2rem;
+      margin-left: 50px;
+      font-family: "Lora", serif;
+      font-optical-sizing: auto;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    &__menu {
+      display: flex;
+      list-style: none;
+      text-align: center;
+      gap: 1rem;
+
+      &__item {
+        line-height: 40px;
+        margin-right: 1.5rem;
+        font-size: 1.8rem;
+        font-family: "Noto Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+
+        &.active {
+          border-bottom: 2px solid var(--accent-color);
+        }
+        &__username{
+          color: var(--accent-color);
+          font-size: 1.8rem;
+        }
+        &__links {
+          color: var(--text-color);
+          text-decoration: none;
+          padding: 0.5rem;
+        }
+      }
+
+      &__item {
+        &:hover {
+          &__links {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar__container__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -110%;
+    opacity: 0;
+    background: var(--navbar-color);
+    transition: all 0.5s ease;
+    z-index: 10;
+
+    &.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    &__item {
+      border-bottom: 1px solid #282828;
+      margin: 0;
+      padding: 20px 0;
+      color: var(--text-color);
+    }
+  }
+
+  .nav-icon {
+    display: block;
+    cursor: pointer;
+    color: var(--main-text-color);
+    padding-right: 20px;
+    z-index: 11;
+  }
+}

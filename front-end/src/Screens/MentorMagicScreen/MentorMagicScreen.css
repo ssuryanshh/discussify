@@ -1,0 +1,19 @@
+.mentor-magic-screen-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor-magic-screen-header{
+    border-bottom: 2px solid var(--navbar-color);
+    width: 100%;
+    padding: 3rem;
+}
+.mentor-magic-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 3rem;
+    gap: 7rem;
+}

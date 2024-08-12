@@ -1,0 +1,40 @@
+.joy-junction-screen-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: var(--accent-color);
+}
+.joy-junction-screen-container h1{
+    font-size: 4rem;
+}
+.joy-junction-screen-container h2{
+    font-size: 2rem;
+    color: var(--main-text-color);
+}
+.joy-junction-screen-header{
+    border-bottom: 2px solid var(--navbar-color);
+    width: 100%;
+    padding: 3rem;
+}
+.joy-junction-main{
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.music{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.music h2{
+    font-size: 3rem;
+}

@@ -1,0 +1,67 @@
+.mentee-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: left;
+}
+
+.mentee-section-container h1{
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+.mentee-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.mentee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--accent-color);
+    border-radius:1rem ;
+    gap: 1.5rem;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+}
+
+div.mentee h2{
+    font-size: 2rem;
+    color: var(--main-text-color)
+}
+
+div.mentee p{
+    font-size: 1.8rem;
+    color: var(--main-text-color)
+}
+
+div.mentee-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+div.mentee button{
+    font-size: 1.8rem;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--accent-color);
+    transition: 0.5s ease-in-out;
+}
+
+button.accept:hover{
+    background-color: green;
+    color: var(--main-text-color);
+}
+
+button.reject:hover{
+    background-color: red;
+    color: var(--main-text-color);
+}
+
+

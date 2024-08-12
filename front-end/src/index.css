@@ -1,0 +1,31 @@
+:root {
+  --main-text-color: #ffffff;
+  --main-background-color: #2C3E50;
+  --primary-color: #34495E;
+  --primary-color-bg:var(--primary-color);
+  --secondary-color: #5D6D7E;
+  --secondary-color-bg:var(--secondary-color);
+  --accent-color: #F1C40F;
+  --navbar-color:var(--primary-color);
+  --text-color:var(--main-text-color);
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html { 
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body{
+  background-color: var(--main-background-color);
+}
+
+#root{
+  height: 100%;
+}
