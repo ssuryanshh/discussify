@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import Avatar from "@mui/material/Avatar";
 import { Input } from "antd";
@@ -16,7 +16,7 @@ function AnswersScreen({ userInfo }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchQuestion = async () => {
+  const fetchQuestion = useCallback(async () => {
     setLoading(true);
     try {
       const response = await axios.get(
@@ -29,9 +29,9 @@ function AnswersScreen({ userInfo }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
 
-  const fetchAnswers = async () => {
+  const fetchAnswers = useCallback(async () => {
     setLoading(true);
     try {
       const response = await axios.get(
@@ -44,12 +44,12 @@ function AnswersScreen({ userInfo }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
 
   useEffect(() => {
     fetchQuestion();
     fetchAnswers();
-  }, [id]);
+  }, [id, fetchQuestion, fetchAnswers]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,70 +73,73 @@ function AnswersScreen({ userInfo }) {
 
   return (
     <div className="answers-screen-container">
-            <div className="answers-screen-header">
-            <PageHeader headerText={"ClarityHub"} content={"Ask and solve your doubts among youselves"} username={userInfo.username}/>
-            </div>
-            <div className="answer-screen-content">
-            {loading ? (
-        <div className="loading">Loading...</div>
-      ) : (
-        <>
-          <div className="question-container">
-            <h2>Question</h2>
-            {question.question_text ? (
-              <>
-                <p className="question">{question.question_text}</p>
-                {question.user_id ? (
-                  <p className="ques-by">
-                    Posted by {question.user_id.username}
-                  </p>
-                ) : (
-                  <p className="ques-by">Posted by: Unknown user</p>
-                )}
-              </>
-            ) : (
-              <p>Loading...</p>
-            )}
-          </div>
-          <h2>Answers</h2>
-          <div className="answers-container">
-            {answers.map((answer) => (
-              <div key={answer._id} className="answer-content">
-                <div className="ans-head">
-                  {answer.user_id ? (
-                    <>
-                      <Avatar>
-                        {answer.user_id.username.charAt(0).toUpperCase()}
-                      </Avatar>
-                      <p>{answer.user_id.username}</p>
-                    </>
+      <div className="answers-screen-header">
+        <PageHeader
+          headerText={"ClarityHub"}
+          content={"Ask and solve your doubts among youselves"}
+          username={userInfo.username}
+        />
+      </div>
+      <div className="answer-screen-content">
+        {loading ? (
+          <div className="loading">Loading...</div>
+        ) : (
+          <>
+            <div className="question-container">
+              <h2>Question</h2>
+              {question.question_text ? (
+                <>
+                  <p className="question">{question.question_text}</p>
+                  {question.user_id ? (
+                    <p className="ques-by">
+                      Posted by {question.user_id.username}
+                    </p>
                   ) : (
-                    <p>Unknown user</p>
+                    <p className="ques-by">Posted by: Unknown user</p>
                   )}
-                </div>
-                <p className="ans">{answer.answer_text}</p>
-                <p className="ans-on">Posted on: {answer.created_at}</p>
-              </div>
-            ))}
-          </div>
-          <div className="answer-post">
-            <h2>Post your Answer</h2>
-            <TextArea
-              value={newAnswer}
-              onChange={(e) => setNewAnswer(e.target.value)}
-              rows={3}
-              placeholder="Enter your Answer"
-            />
-            <button className="ans-sub" onClick={handleSubmit}>
-              Submit
-            </button>
-          </div>
-        </>
-      )}
-      {error && <div className="error">{error}</div>}
-
+                </>
+              ) : (
+                <p>Loading...</p>
+              )}
             </div>
-          </div>
+            <h2>Answers</h2>
+            <div className="answers-container">
+              {answers.map((answer) => (
+                <div key={answer._id} className="answer-content">
+                  <div className="ans-head">
+                    {answer.user_id ? (
+                      <>
+                        <Avatar>
+                          {answer.user_id.username.charAt(0).toUpperCase()}
+                        </Avatar>
+                        <p>{answer.user_id.username}</p>
+                      </>
+                    ) : (
+                      <p>Unknown user</p>
+                    )}
+                  </div>
+                  <p className="ans">{answer.answer_text}</p>
+                  <p className="ans-on">Posted on: {answer.created_at}</p>
+                </div>
+              ))}
+            </div>
+            <div className="answer-post">
+              <h2>Post your Answer</h2>
+              <TextArea
+                value={newAnswer}
+                onChange={(e) => setNewAnswer(e.target.value)}
+                rows={3}
+                placeholder="Enter your Answer"
+              />
+              <button className="ans-sub" onClick={handleSubmit}>
+                Submit
+              </button>
+            </div>
+          </>
+        )}
+        {error && <div className="error">{error}</div>}
+      </div>
+    </div>
   );
 }
 

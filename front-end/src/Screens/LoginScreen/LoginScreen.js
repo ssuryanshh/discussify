@@ -64,7 +64,7 @@ function LoginScreen({ setUserInfo }) {
     try {
       let res = await fetch(ENDPOINT, OPTION);
       const data = await res.json();
-      if (data.success) {
+      if (data.success===true) {
         const { userId, username, category, token } = data;
         setUserInfo({
           isSignin: true,
@@ -73,16 +73,15 @@ function LoginScreen({ setUserInfo }) {
           category: category,
           token: token,
         });
-        toast.success("Successfully logged in!", {
+        toast.success("Successfully logged in",{
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+          draggable: false,
+          theme:"light"
+        })
         navigate("/talksphere");
       } else {
         toast.error("Login Failed", {
@@ -133,6 +132,7 @@ function LoginScreen({ setUserInfo }) {
       let res = await fetch(ENDPOINT, OPTION);
       res = await res.json();
       if (res.success) {
+        
         toast.success("Successfully registered! Please Sign in to continue!", {
           position: "top-right",
           autoClose: 5000,

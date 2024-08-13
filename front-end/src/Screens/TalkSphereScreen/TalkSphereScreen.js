@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 import "./TalkSphereScreen.css";
 import Chats from "../../Components/TalkSphere/Chats/Chats";
@@ -10,7 +10,7 @@ const { TextArea } = Input;
 function TalkSphereScreen({ userInfo }) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const socket = io("http://localhost:4000");
+  const socket = useRef(io("http://localhost:4000")).current;
 
   useEffect(() => {
     socket.on("chatMessage", (msg) => {
@@ -21,7 +21,7 @@ function TalkSphereScreen({ userInfo }) {
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [socket]);
 
   const sendMessage = () => {
     if (message.trim()) {
