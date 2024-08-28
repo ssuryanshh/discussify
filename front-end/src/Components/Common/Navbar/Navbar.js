@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { HiX } from 'react-icons/hi';
 import './Navbar.scss';
+import config from "./../../../config"
+const {BASE_API_URL} = config;
 
 const data1 = [
   {
@@ -67,7 +69,7 @@ function Navbar({ userInfo, setUserInfo }) {
     if (userInfo && userInfo.isSignin) {
       (async () => {
         try {
-          const response = await fetch("http://localhost:4000/api/auth/user", {
+          const response = await fetch(`${BASE_API_URL}/auth/user`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from "@mui/material/Avatar";
 import "./Mentor.css";
-
+import config from "./../../../config"
+const {BASE_API_URL} = config;
 function Mentor({ userId }) {
     const [mentors, setMentors] = useState([]);
 
     useEffect(() => {
         const fetchMentors = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/api/mentorship/available-mentors/${userId}`);
+                const response = await fetch(`${BASE_API_URL}/mentorship/available-mentors/${userId}`);
                 const result = await response.json();
                 if (result.success) {
                     setMentors(result.data);
@@ -25,7 +26,7 @@ function Mentor({ userId }) {
 
     const handleRequestMentorship = async (mentorId) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/mentorship/request/${userId}`, {
+            const response = await fetch(`${BASE_API_URL}/mentorship/request/${userId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

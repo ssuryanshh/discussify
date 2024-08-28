@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./PreviousQuestion.css";
 import { Link } from "react-router-dom";
-
+import config from "./../../../config"
+const {BASE_API_URL} = config;
 function PreviousQuestion({ userId, refresh }) {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ function PreviousQuestion({ userId, refresh }) {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:4000/api/question/user/${userId}`
+          `${BASE_API_URL}/question/user/${userId}`
         );
         const data = await response.json();
         if (data && data.data) {

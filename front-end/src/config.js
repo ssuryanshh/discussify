@@ -1,5 +1,5 @@
 const config = {
-    BASE_API_URL : "http://localhost:4000/api"
+    BASE_API_URL : "https://ed-unity-nnpz.onrender.com/api"
 }
 
 export default config

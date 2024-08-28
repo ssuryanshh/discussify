@@ -5,6 +5,8 @@ import { Input } from "antd";
 import "./AnswersScreen.css";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../Components/Common/PageHeader/PageHeader";
+import config from "./../../config"
+const {BASE_API_URL} = config;
 
 const { TextArea } = Input;
 
@@ -20,7 +22,7 @@ function AnswersScreen({ userInfo }) {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/question/${id}`
+        `${BASE_API_URL}/question/${id}`
       );
       const data = response.data;
       setQuestion(data.data);
@@ -35,7 +37,7 @@ function AnswersScreen({ userInfo }) {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/answers/${id}`
+        `${BASE_API_URL}/answers/${id}`
       );
       const data = response.data;
       setAnswers(data.data);
@@ -55,7 +57,7 @@ function AnswersScreen({ userInfo }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/answers/create`,
+        `${BASE_API_URL}/answers/create`,
         {
           user_id: userInfo.userId,
           question_id: id,

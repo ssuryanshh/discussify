@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Avatar from "@mui/material/Avatar";
 import "./Mentee.css";
+import config from "./../../../config"
+const {BASE_API_URL} = config;
 
 function Mentee({ userId }) {
     const [requests, setRequests] = useState([]);
@@ -8,7 +10,7 @@ function Mentee({ userId }) {
     useEffect(() => {
         const fetchMenteeRequests = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/api/mentorship/mentor/requests/${userId}`);
+                const response = await fetch(`${BASE_API_URL}/mentorship/mentor/requests/${userId}`);
                 const result = await response.json();
                 if (result.success) {
                     setRequests(result.data);
@@ -25,7 +27,7 @@ function Mentee({ userId }) {
 
     const updateRequestStatus = async (requestId, status) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/mentorship/update-status`, {
+            const response = await fetch(`${BASE_API_URL}/mentorship/update-status`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

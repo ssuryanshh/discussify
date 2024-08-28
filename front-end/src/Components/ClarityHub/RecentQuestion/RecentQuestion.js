@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Avatar from "@mui/material/Avatar";
 import "./RecentQuestion.css";
 import { Link } from "react-router-dom";
+import config from "./../../../config"
+const {BASE_API_URL} = config;
 
 function RecentQuestion({ category, refresh }) {
   const [questions, setQuestions] = useState([]);
@@ -12,7 +14,7 @@ function RecentQuestion({ category, refresh }) {
     const fetchQuestions = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:4000/api/question/category/${category}`);
+        const response = await fetch(`${BASE_API_URL}/question/category/${category}`);
         const data = await response.json();
         setQuestions(data.data);
       } catch (error) {

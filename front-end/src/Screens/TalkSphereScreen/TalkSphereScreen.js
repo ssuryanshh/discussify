@@ -10,7 +10,7 @@ const { TextArea } = Input;
 function TalkSphereScreen({ userInfo }) {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const socket = useRef(io("http://localhost:4000")).current;
+  const socket = useRef(io("https://ed-unity-nnpz.onrender.com")).current;
 
   useEffect(() => {
     socket.on("chatMessage", (msg) => {
